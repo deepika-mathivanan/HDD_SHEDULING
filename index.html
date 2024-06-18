@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDD Scheduling Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #results {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .result-section {
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>HDD Scheduling Simulator</h1>
+    <form id="schedulerForm">
+        <label for="queue">Disk Request Queue (comma separated):</label>
+        <input type="text" id="queue" name="queue" required>
+
+        <label for="head">Initial Head Position:</label>
+        <input type="number" id="head" name="head" required>
+
+        <button type="submit">Simulate</button>
+    </form>
+    <div id="results"></div>
+    
+    <script>
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = 'login.html';
+        }
+
+        document.getElementById('schedulerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
